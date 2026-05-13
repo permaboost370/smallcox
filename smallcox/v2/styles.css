@@ -1,0 +1,354 @@
+/* ============================================================
+   THE SMALLCOX HERALD  ::  tabloid newsprint variant
+   Cream paper, ink-black, dr-red accents. Bodoni / Crimson /
+   Special Elite typewriter. Halftone photo. Multi-column body.
+============================================================ */
+
+:root{
+  --paper:   #f4ecd8;
+  --paper-2: #efe4c8;
+  --paper-3: #e6dab6;
+  --ink:     #0e0e0e;
+  --ink-2:   #2a2520;
+  --ink-3:   #5a5043;
+  --red:     #b1281f;
+  --red-2:   #8a1c14;
+  --rule:    #0e0e0e;
+  --rule-2:  rgba(14,14,14,.25);
+
+  --serif:   "Bodoni Moda", "Bodoni 72", "Didot", "Playfair Display", Georgia, serif;
+  --body:    "Crimson Pro", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --type:    "Special Elite", "American Typewriter", Courier, monospace;
+
+  --maxw:    1240px;
+  --gutter:  clamp(18px, 4vw, 56px);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:18px;line-height:1.55;
+  font-feature-settings:"liga","kern","onum";
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+/* paper texture — subtle, recycled-newsprint feel */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:90;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/></svg>");
+  opacity:.10;mix-blend-mode:multiply;
+}
+body::after{
+  /* subtle parchment gradient */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:89;
+  background:
+    radial-gradient(80vmax 60vmax at 15% 0%,  rgba(0,0,0,.04), transparent 60%),
+    radial-gradient(80vmax 60vmax at 85% 100%,rgba(0,0,0,.05), transparent 60%);
+}
+
+/* small floating link back to v1 */
+.variant-toggle{
+  position:fixed;top:14px;left:14px;z-index:100;
+  font-family:var(--type);font-size:12px;letter-spacing:.08em;
+  color:var(--ink);text-decoration:none;background:var(--paper);
+  border:1px solid var(--ink);padding:6px 10px;
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.variant-toggle:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+
+/* ============================================================
+   MASTHEAD
+============================================================ */
+.masthead{
+  max-width:var(--maxw);margin:0 auto;
+  padding:48px var(--gutter) 24px;
+  text-align:center;
+  border-bottom:1px solid var(--rule);
+}
+.mast-top{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--type);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);
+  padding-bottom:14px;border-bottom:1px solid var(--rule-2);
+}
+.mast-top .weather{display:none}
+@media (min-width:680px){.mast-top .weather{display:inline}}
+
+.nameplate{
+  font-family:var(--serif);font-weight:900;font-style:italic;
+  font-size:clamp(58px, 11vw, 156px);line-height:.95;letter-spacing:-.01em;
+  margin:18px 0 6px;
+}
+.motto{
+  font-family:var(--body);font-style:italic;font-size:15px;
+  color:var(--ink-2);margin:0 0 18px;letter-spacing:.04em;
+}
+.mast-rule{
+  display:flex;align-items:center;gap:16px;justify-content:center;
+  font-family:var(--type);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-2);
+}
+.mast-rule i{flex:1;height:0;border-top:1px solid var(--rule);max-width:240px}
+
+/* ============================================================
+   PAPER MAIN
+============================================================ */
+.paper{
+  max-width:var(--maxw);margin:0 auto;padding:48px var(--gutter) 80px;
+  position:relative;
+}
+
+/* ============================================================
+   LEAD STORY
+============================================================ */
+.kicker{
+  text-align:center;
+  font-family:var(--type);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--red);margin:0 0 10px;
+}
+.kicker::before, .kicker::after{
+  content:"★";display:inline-block;margin:0 12px;color:var(--red);
+  transform:translateY(-1px);
+}
+
+.headline{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(60px, 11vw, 168px);
+  line-height:.86;letter-spacing:-.02em;
+  text-align:center;margin:8px 0 18px;
+  text-transform:uppercase;
+}
+.headline em{font-style:italic;font-weight:900;color:var(--red);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:.04em}
+
+.subhead{
+  text-align:center;font-family:var(--body);font-style:italic;
+  font-size:clamp(18px, 2.2vw, 22px);line-height:1.45;
+  color:var(--ink-2);max-width:62ch;margin:0 auto 22px;
+}
+.subhead strong{font-style:normal;color:var(--ink);font-weight:700}
+
+.byline-row{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:10px;align-items:center;
+  font-family:var(--type);font-size:12px;letter-spacing:.06em;color:var(--ink-2);
+  padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.byline-row .sep{opacity:.4}
+.byline em{font-style:italic;color:var(--ink)}
+
+/* article body — multi-column newspaper layout */
+.article{
+  margin-top:32px;
+  column-count:2;column-gap:32px;column-rule:1px solid var(--rule-2);
+  font-size:18px;line-height:1.6;
+}
+.article > p{margin:0 0 1em;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.article .dropcap{
+  font-family:var(--serif);font-weight:900;font-style:normal;
+  float:left;font-size:5.2em;line-height:.82;
+  padding:6px 10px 0 0;color:var(--ink);
+}
+
+/* lead photo — sits inside the columns and breaks across */
+.lead-photo{
+  margin:0 0 14px;column-span:all;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;
+  padding:18px 0;border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);
+}
+@media (max-width:760px){.lead-photo{grid-template-columns:1fr}}
+.lead-photo img{
+  display:block;width:100%;height:auto;max-width:480px;justify-self:center;
+  filter:contrast(1.05);
+  mix-blend-mode:multiply;
+}
+.lead-photo figcaption{
+  font-family:var(--body);font-style:italic;font-size:15px;line-height:1.5;
+  color:var(--ink-2);
+}
+.lead-photo figcaption strong{font-style:normal;font-weight:700;color:var(--ink)}
+
+/* pull quote inside the article */
+.pull-quote{
+  column-span:all;margin:18px auto;max-width:680px;text-align:center;
+  padding:24px 24px 18px;border-top:3px double var(--rule);border-bottom:3px double var(--rule);
+  position:relative;
+}
+.pull-quote .qm{
+  font-family:var(--serif);font-style:italic;font-size:96px;line-height:0;
+  color:var(--red);display:block;margin-bottom:18px;
+}
+.pull-quote p{
+  font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:clamp(36px, 5vw, 64px);line-height:1.05;margin:0;
+}
+.pull-quote cite{
+  display:block;margin-top:14px;font-family:var(--type);font-size:12px;letter-spacing:.14em;
+  font-style:normal;color:var(--ink-2);text-transform:uppercase;
+}
+
+@media (max-width:760px){.article{column-count:1}}
+
+/* ============================================================
+   STORY SECTIONS (shared)
+============================================================ */
+.story{
+  margin-top:64px;padding-top:32px;border-top:6px double var(--rule);
+}
+.storyhead{text-align:center;margin-bottom:26px;max-width:62ch;margin-inline:auto}
+.badge{
+  display:inline-block;font-family:var(--type);font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  padding:6px 14px;border:1px solid var(--ink);color:var(--ink);background:var(--paper);
+  box-shadow:3px 3px 0 var(--ink);margin-bottom:14px;
+}
+.badge.red{color:var(--paper);background:var(--red);border-color:var(--red);box-shadow:3px 3px 0 var(--ink)}
+.storyhead h3{
+  font-family:var(--serif);font-weight:900;font-style:italic;
+  font-size:clamp(34px, 5vw, 60px);line-height:1;margin:8px 0;letter-spacing:-.01em;
+}
+.storyhead p{font-family:var(--body);font-style:italic;color:var(--ink-2);margin:0}
+
+/* ============================================================
+   VIDEO STORY — boxed in the layout but unmistakably a clip
+============================================================ */
+.vid-wrap{
+  margin:0 auto;max-width:680px;text-align:center;
+  border:1px solid var(--ink);padding:14px;background:var(--paper);
+  box-shadow:6px 6px 0 var(--ink);
+}
+.vid{
+  width:100%;aspect-ratio:1/1;display:block;background:#000;
+  border:1px solid var(--ink);
+  filter:contrast(1.04) saturate(.85);
+}
+.vid-caption{
+  font-family:var(--body);font-style:italic;font-size:15px;
+  color:var(--ink-2);margin:14px 4px 0;text-align:left;line-height:1.5;
+}
+.vid-caption strong{font-family:var(--type);font-style:normal;font-size:12px;letter-spacing:.14em;color:var(--ink);margin-right:6px}
+
+/* ============================================================
+   SYMPTOMS — roman-numeral medical list
+============================================================ */
+.symptoms{
+  list-style:none;padding:0;margin:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border-top:1px solid var(--rule);
+}
+@media (max-width:760px){.symptoms{grid-template-columns:1fr}}
+.symptoms li{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;
+  padding:22px 24px;border-bottom:1px solid var(--rule);
+}
+.symptoms li:nth-child(odd){border-right:1px solid var(--rule)}
+@media (max-width:760px){.symptoms li:nth-child(odd){border-right:0}}
+.sym-no{
+  font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:42px;line-height:1;color:var(--red);min-width:60px;
+}
+.symptoms h4{
+  font-family:var(--serif);font-weight:900;font-size:24px;letter-spacing:-.005em;
+  margin:0 0 4px;
+}
+.symptoms p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)}
+
+/* ============================================================
+   DOCTOR'S ORDERS — numbered prescription list
+============================================================ */
+.orders .steps{
+  list-style:none;padding:0;margin:0;
+  counter-reset:rx;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+}
+@media (max-width:680px){.orders .steps{grid-template-columns:1fr}}
+.orders .steps li{
+  padding:22px 24px;border-top:1px solid var(--rule);
+}
+.orders .steps li:nth-child(odd){border-right:1px solid var(--rule)}
+@media (max-width:680px){.orders .steps li:nth-child(odd){border-right:0}}
+.orders .steps li span{
+  display:block;font-family:var(--type);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--red);margin-bottom:6px;
+}
+.orders .steps li h4{
+  font-family:var(--serif);font-weight:900;font-style:italic;
+  font-size:30px;letter-spacing:-.01em;margin:0 0 8px;
+}
+.orders .steps li p{margin:0;color:var(--ink-2);font-size:16px;line-height:1.55;max-width:40ch}
+.orders .steps li a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+
+/* ============================================================
+   CLASSIFIEDS — boxed ads
+============================================================ */
+.classifieds .ads{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:2px solid var(--rule);border-left:2px solid var(--rule);
+}
+@media (max-width:880px){.classifieds .ads{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.classifieds .ads{grid-template-columns:1fr}}
+.ad{
+  padding:20px 18px;
+  border-right:2px solid var(--rule);border-bottom:2px solid var(--rule);
+  background:var(--paper);
+}
+.ad h5{
+  font-family:var(--type);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);margin:0 0 8px;
+}
+.ad p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.ad strong{color:var(--ink);font-weight:700}
+.ad-buy{background:var(--paper-3);}
+.ad-buy h5{color:var(--ink)}
+.ad-socials{display:flex;gap:10px;margin-top:14px}
+.ts{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border:2px solid var(--ink);background:var(--paper);
+  color:var(--ink);text-decoration:none;
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+}
+.ts svg{width:18px;height:18px}
+.ts:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);background:var(--red);color:var(--paper);border-color:var(--red)}
+
+/* ============================================================
+   FOOTER MASTHEAD
+============================================================ */
+.masthead-foot{
+  max-width:var(--maxw);margin:0 auto;padding:28px var(--gutter) 60px;
+  border-top:6px double var(--rule);text-align:center;
+  font-family:var(--body);
+}
+.masthead-foot p{margin:6px 0;color:var(--ink-2);font-size:14px}
+.masthead-foot .legal{
+  font-family:var(--type);font-size:11px;letter-spacing:.06em;line-height:1.7;
+  color:var(--ink-3);max-width:68ch;margin:18px auto 0;
+}
+
+/* ============================================================
+   BACK-TO-TOP — paper version
+============================================================ */
+.to-top{
+  position:fixed;right:22px;bottom:22px;z-index:60;
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  padding:10px 14px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);
+  font-family:var(--type);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:4px 4px 0 var(--ink);
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease, background .12s ease, color .12s ease, box-shadow .12s ease;
+}
+.to-top.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.to-top:hover{background:var(--red);color:var(--paper);border-color:var(--red);box-shadow:6px 6px 0 var(--ink)}
+.to-top svg{width:14px;height:14px}
+@media (max-width:520px){
+  .to-top span{display:none}
+  .to-top{padding:10px}
+}
+
+::selection{background:var(--red);color:var(--paper)}

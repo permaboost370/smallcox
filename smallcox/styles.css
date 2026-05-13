@@ -586,6 +586,23 @@ body::before{
   .to-top{padding:10px;border-radius:50%}
 }
 
+/* small floating link to v2 (newsprint variant) */
+.variant-toggle{
+  position:fixed;top:14px;right:14px;z-index:100;
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;
+  padding:8px 12px;border-radius:999px;
+  background:rgba(20,14,30,.7);border:1px solid rgba(176,124,255,.32);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+  transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.variant-toggle:hover{
+  background:var(--accent);color:var(--paper);border-color:var(--accent);transform:translateY(-1px);
+}
+/* the toggle sits above the sticky nav — leave room on small screens */
+@media (max-width:520px){.variant-toggle{top:auto;bottom:auto}}
+
 ::selection{background:var(--accent);color:var(--paper)}
 
 @media (prefers-reduced-motion: reduce){
