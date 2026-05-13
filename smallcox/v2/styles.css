@@ -64,6 +64,10 @@ body::after{
   transition:transform .12s ease, box-shadow .12s ease;
 }
 .variant-toggle:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+/* don't crash into the masthead on small screens */
+@media (max-width:760px){
+  .variant-toggle{top:auto;left:auto;right:14px;bottom:74px;font-size:11px;padding:5px 9px}
+}
 
 /* ============================================================
    MASTHEAD
@@ -122,12 +126,16 @@ body::after{
 
 .headline{
   font-family:var(--serif);font-weight:900;
-  font-size:clamp(60px, 11vw, 168px);
-  line-height:.86;letter-spacing:-.02em;
+  font-size:clamp(40px, 11vw, 168px);
+  line-height:.88;letter-spacing:-.02em;
   text-align:center;margin:8px 0 18px;
   text-transform:uppercase;
+  overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto;
 }
 .headline em{font-style:italic;font-weight:900;color:var(--red);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:.04em}
+@media (max-width:760px){
+  .headline{font-size:clamp(42px, 12.5vw, 80px);line-height:.94}
+}
 
 .subhead{
   text-align:center;font-family:var(--body);font-style:italic;
@@ -244,20 +252,30 @@ body::after{
 }
 @media (max-width:760px){.symptoms{grid-template-columns:1fr}}
 .symptoms li{
-  display:grid;grid-template-columns:auto 1fr;gap:18px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-areas:
+    "num title"
+    "num body";
+  column-gap:18px;row-gap:4px;
   padding:22px 24px;border-bottom:1px solid var(--rule);
 }
 .symptoms li:nth-child(odd){border-right:1px solid var(--rule)}
 @media (max-width:760px){.symptoms li:nth-child(odd){border-right:0}}
 .sym-no{
+  grid-area:num;align-self:start;
   font-family:var(--serif);font-style:italic;font-weight:700;
-  font-size:42px;line-height:1;color:var(--red);min-width:60px;
+  font-size:42px;line-height:1;color:var(--red);min-width:54px;
 }
 .symptoms h4{
+  grid-area:title;
   font-family:var(--serif);font-weight:900;font-size:24px;letter-spacing:-.005em;
   margin:0 0 4px;
 }
-.symptoms p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.symptoms p{
+  grid-area:body;
+  margin:0;font-size:15px;line-height:1.55;color:var(--ink-2);
+}
 
 /* ============================================================
    DOCTOR'S ORDERS — numbered prescription list
