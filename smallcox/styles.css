@@ -201,7 +201,7 @@ body::before{
 
 /* hero footer row */
 .hero-foot{
-  display:flex;justify-content:space-between;align-items:end;gap:24px;
+  display:flex;justify-content:flex-end;align-items:end;gap:24px;
   padding-top:24px;border-top:1px solid var(--rule);
 }
 .ca-row{
