@@ -22,7 +22,7 @@
 
 <header class="nav">
   <a class="brand" href="#top">
-    <img src="./assets/logo.webp" alt="" width="28" height="28" />
+    <img src="./assets/logo-orig.webp" alt="" width="32" height="32" />
     <span>SMALLCOX</span>
   </a>
   <nav class="links">
@@ -31,26 +31,32 @@
     <a href="#protocol">Protocol</a>
     <a href="#specs">Specs</a>
   </nav>
-  <a class="nav-cta" href="#buy">Get $COX</a>
+  <div class="nav-right">
+    <div class="nav-socials" aria-label="Social channels">
+      <a class="ns" href="#" aria-label="X / Twitter" data-soon>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2H21l-6.52 7.45L22 22h-6.844l-4.78-6.27L4.8 22H2l7-8.01L1.6 2h6.93l4.32 5.71L18.244 2Zm-1.2 18h1.9L7.04 4H5.04l12 16Z"/></svg>
+      </a>
+      <a class="ns" href="#" aria-label="Telegram" data-soon>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.96 15.36 9.8 19.6c.5 0 .72-.22 1-.48l2.4-2.32 4.98 3.64c.92.5 1.58.24 1.82-.86l3.3-15.46c.32-1.42-.52-1.98-1.4-1.66L1.6 9.18c-1.4.56-1.38 1.36-.24 1.72l5.32 1.66 12.36-7.78c.58-.36 1.12-.16.68.22"/></svg>
+      </a>
+      <a class="ns" href="#" aria-label="Dexscreener" data-soon>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h4v16H3zM10 8h4v12h-4zM17 12h4v8h-4z"/></svg>
+      </a>
+    </div>
+    <a class="nav-cta" href="#buy">Get $COX</a>
+  </div>
 </header>
 
 <main id="top">
 
 <!-- ============================== HERO ============================== -->
 <section class="hero">
-
-  <div class="hero-meta">
-    <span class="dot"></span>
-    <span>FILE&nbsp;NO.&nbsp;COX-001</span>
-    <span class="sep">/</span>
-    <span>SOLANA</span>
-    <span class="sep">/</span>
-    <span>STATUS: ACTIVE OUTBREAK</span>
-  </div>
-
   <div class="hero-grid">
     <div class="hero-type">
-      <h1 class="wordmark"><span>S</span><span>M</span><span>A</span><span>L</span><span>L</span><span>C</span><span>O</span><span>X</span></h1>
+      <h1 class="wordmark">
+        <span aria-hidden="true">SMALLCOX</span>
+        <span class="sr-only">Smallcox</span>
+      </h1>
       <div class="hero-sub">
         <p class="ticker">$COX</p>
         <p class="lede">
@@ -66,7 +72,7 @@
     </div>
 
     <figure class="hero-art">
-      <img src="./assets/logo.webp" alt="Smallcox specimen" loading="eager" decoding="async" />
+      <img src="./assets/logo-orig.webp" alt="Smallcox specimen" loading="eager" decoding="async" />
       <figcaption>Specimen 001 — recovered from the timeline</figcaption>
     </figure>
   </div>
@@ -143,34 +149,34 @@
   <div class="rule"><span>02</span><i></i><span>Clinical Findings</span></div>
   <h2 class="display">Side&nbsp;effects&nbsp;<em class="serif-it">may include</em></h2>
 
-  <ol class="findings-list">
-    <li>
-      <span class="num">01</span>
+  <ol class="findings-grid">
+    <li class="f-card">
+      <div class="f-head"><span class="num">01</span><span class="tag">Acute</span></div>
       <h3>Portfolio engorgement</h3>
       <p>Acute swelling of the unrealized PnL line. Persists in onlookers as a recurring need to refresh the chart.</p>
     </li>
-    <li>
-      <span class="num">02</span>
+    <li class="f-card">
+      <div class="f-head"><span class="num">02</span><span class="tag">Fever</span></div>
       <h3>FOMO fever</h3>
       <p>Body temperature spikes correlate strongly with green candles. Cold sweats reported in those who sold the bottom.</p>
     </li>
-    <li>
-      <span class="num">03</span>
+    <li class="f-card">
+      <div class="f-head"><span class="num">03</span><span class="tag">Airborne</span></div>
       <h3>Memetic shedding</h3>
       <p>Carriers infect three contacts within twenty-four hours. Vector of transmission: a single shared link.</p>
     </li>
-    <li>
-      <span class="num">04</span>
+    <li class="f-card">
+      <div class="f-head"><span class="num">04</span><span class="tag">Chronic</span></div>
       <h3>Diamond calluses</h3>
       <p>Hands fuse to phones within minutes of first exposure. Irreversible. Often desired.</p>
     </li>
-    <li>
-      <span class="num">05</span>
+    <li class="f-card">
+      <div class="f-head"><span class="num">05</span><span class="tag">Cyclical</span></div>
       <h3>Shrinkage</h3>
       <p>Temporary. Documented in 100% of Sundays. Studies remain inconclusive.</p>
     </li>
-    <li>
-      <span class="num">06</span>
+    <li class="f-card">
+      <div class="f-head"><span class="num">06</span><span class="tag">Terminal</span></div>
       <h3>Cult formation</h3>
       <p>Carriers begin referring to themselves as &ldquo;the infected.&rdquo; Group chats double as treatment facilities.</p>
     </li>
@@ -211,14 +217,38 @@
   <div class="rule"><span>04</span><i></i><span>Strain Specification</span></div>
   <h2 class="display">The&nbsp;strain.</h2>
 
-  <dl class="spec-list">
-    <div><dt>Total supply</dt><dd>1,000,000,000</dd></div>
-    <div><dt>Network</dt><dd>Solana</dd></div>
-    <div><dt>Buy &amp; sell tax</dt><dd>0 / 0</dd></div>
-    <div><dt>Liquidity</dt><dd>100% burned</dd></div>
-    <div><dt>Team allocation</dt><dd>None</dd></div>
-    <div><dt>Average pump</dt><dd>Three inches</dd></div>
-  </dl>
+  <div class="spec-grid">
+    <article class="s-card">
+      <span class="s-label">Total supply</span>
+      <strong class="s-value">1<small>,</small>000<small>,</small>000<small>,</small>000</strong>
+      <span class="s-foot">One billion units in circulation</span>
+    </article>
+    <article class="s-card">
+      <span class="s-label">Network</span>
+      <strong class="s-value">Solana</strong>
+      <span class="s-foot">SPL · low-latency · low-fee</span>
+    </article>
+    <article class="s-card">
+      <span class="s-label">Buy / Sell tax</span>
+      <strong class="s-value">0<small> / </small>0</strong>
+      <span class="s-foot">No tax. No friction.</span>
+    </article>
+    <article class="s-card">
+      <span class="s-label">Liquidity</span>
+      <strong class="s-value">100<small>%</small></strong>
+      <span class="s-foot">LP burned at deploy</span>
+    </article>
+    <article class="s-card">
+      <span class="s-label">Team allocation</span>
+      <strong class="s-value">None</strong>
+      <span class="s-foot">Zero wallet, zero unlocks</span>
+    </article>
+    <article class="s-card s-card-accent">
+      <span class="s-label">Average pump</span>
+      <strong class="s-value">3<small>"</small></strong>
+      <span class="s-foot">Per clinical observation</span>
+    </article>
+  </div>
 </section>
 
 <!-- ============================== BUY / SOCIALS ============================== -->
@@ -252,6 +282,13 @@
   <span>SMALLCOX · the only virus that pumps</span>
   <span class="foot-r">© 2026 · A self-replicating asset</span>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/>
+  </svg>
+  <span>Top</span>
+</button>
 
 <script src="./app.js" defer></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

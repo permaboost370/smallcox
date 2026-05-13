@@ -22,7 +22,7 @@ document.querySelectorAll(".copy").forEach((btn) => {
 });
 
 // Dead social links: prevent jumps, soft hover-bounce instead
-document.querySelectorAll(".social[data-soon]").forEach((a) => {
+document.querySelectorAll("[data-soon]").forEach((a) => {
   a.addEventListener("click", (e) => {
     if (a.getAttribute("href") === "#") {
       e.preventDefault();
@@ -34,6 +34,19 @@ document.querySelectorAll(".social[data-soon]").forEach((a) => {
   });
 });
 
+// Back-to-top button — show after the user scrolls past the hero
+const toTop = document.getElementById("toTop");
+if (toTop) {
+  const onScroll = () => {
+    toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
 // Subtle parallax on the hero specimen — desktop only
 const specimen = document.querySelector(".hero-art img");
 if (specimen && matchMedia("(pointer:fine)").matches) {
@@ -44,18 +57,14 @@ if (specimen && matchMedia("(pointer:fine)").matches) {
   }, { passive: true });
 }
 
-// Letter-stagger entrance for the wordmark
-const wordmark = document.querySelector(".wordmark");
+// Wordmark entrance — single fade-up
+const wordmark = document.querySelector(".wordmark > span[aria-hidden]");
 if (wordmark) {
-  wordmark.querySelectorAll("span").forEach((s, i) => {
-    s.style.opacity = "0";
-    s.style.transform = "translateY(20px)";
-    s.style.transition = `opacity .5s ease ${i * 60}ms, transform .6s cubic-bezier(.2,.7,.2,1) ${i * 60}ms`;
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        s.style.opacity = "1";
-        s.style.transform = "translateY(0)";
-      });
-    });
-  });
+  wordmark.style.opacity = "0";
+  wordmark.style.transform = "translateY(24px)";
+  wordmark.style.transition = "opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1)";
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    wordmark.style.opacity = "1";
+    wordmark.style.transform = "translateY(0)";
+  }));
 }
