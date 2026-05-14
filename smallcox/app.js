@@ -1,6 +1,25 @@
-// Smallcox — wojak rebuild. No frameworks. No tracking.
+// SMALLCOX — minimal scripts. No frameworks.
 
-// Dead social links: prevent jumps, soft bounce instead
+// Copy-to-clipboard for contract address
+document.querySelectorAll(".copy").forEach((btn) => {
+  const original = btn.textContent;
+  btn.addEventListener("click", async () => {
+    const sel = btn.getAttribute("data-copy");
+    const el = sel && document.querySelector(sel);
+    if (!el) return;
+    try {
+      await navigator.clipboard.writeText(el.textContent.trim());
+      btn.textContent = "Copied!";
+      btn.style.background = "#fff";
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = "";
+      }, 1200);
+    } catch { /* no-op */ }
+  });
+});
+
+// Dead links: prevent jump-to-top + soft bounce
 document.querySelectorAll("[data-soon]").forEach((a) => {
   a.addEventListener("click", (e) => {
     if (a.getAttribute("href") === "#") {
@@ -13,35 +32,28 @@ document.querySelectorAll("[data-soon]").forEach((a) => {
   });
 });
 
-// Back-to-top — show after the hero
+// Back-to-top
 const toTop = document.getElementById("toTop");
 if (toTop) {
   const onScroll = () => {
-    toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+    toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.7);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
-// Hero art: subtle cursor parallax (desktop only)
-const wojak = document.querySelector(".hero-art img");
-if (wojak && matchMedia("(pointer:fine)").matches) {
-  window.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 8;
-    const y = (e.clientY / window.innerHeight - 0.5) * 8;
-    wojak.style.translate = `${x}px ${y}px`;
-  }, { passive: true });
-}
-
-// Wordmark entrance — single fade-up
-const wordmark = document.querySelector(".wordmark span");
-if (wordmark) {
-  wordmark.style.opacity = "0";
-  wordmark.style.transform = "translateY(20px)";
-  wordmark.style.transition = "opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1)";
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    wordmark.style.opacity = "1";
-    wordmark.style.transform = "translateY(0)";
-  }));
+// Subtle character tilt on cursor (desktop only)
+const heroImg = document.querySelector(".hero-art img");
+if (heroImg && matchMedia("(pointer:fine)").matches) {
+  const art = document.querySelector(".hero-art");
+  art.addEventListener("mousemove", (e) => {
+    const rect = art.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    heroImg.style.transform = `rotate(${x * 3}deg) translate3d(${x * 6}px, ${y * 6}px, 0)`;
+  });
+  art.addEventListener("mouseleave", () => {
+    heroImg.style.transform = "";
+  });
 }
