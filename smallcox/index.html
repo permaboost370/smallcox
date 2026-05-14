@@ -3,33 +3,36 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>SMALLCOX / $COX</title>
-<meta name="description" content="Smallcox ($COX) — clinical findings on the only virus that pumps. A Solana memecoin." />
-<meta property="og:title" content="SMALLCOX / $COX" />
-<meta property="og:description" content="Clinical findings on the only virus that pumps." />
-<meta property="og:image" content="./assets/logo.png" />
-<meta name="theme-color" content="#07050C" />
-<link rel="icon" type="image/png" href="./assets/logo.png" />
+<title>SMALLCOX · $COX</title>
+<meta name="description" content="SMALLCOX ($COX). The only virus that pumps. A Solana memecoin." />
+<meta property="og:title" content="SMALLCOX · $COX" />
+<meta property="og:description" content="The only virus that pumps." />
+<meta property="og:image" content="./assets/banner.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/png" href="./assets/mark.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<link rel="preload" as="image" href="./assets/logo.webp" />
+<link rel="preload" as="image" href="./assets/banner.webp" />
 <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
+<!-- decorative red dots scattered behind everything -->
+<div class="dots" aria-hidden="true"></div>
+
 <header class="nav">
   <a class="brand" href="#top">
-    <img src="./assets/logo-orig.webp" alt="" width="32" height="32" />
+    <img src="./assets/mark.webp" alt="" width="40" height="32" />
     <span>SMALLCOX</span>
   </a>
   <nav class="links">
     <a href="#origin">Origin</a>
-    <a href="#findings">Findings</a>
-    <a href="#protocol">Protocol</a>
-    <a href="#specs">Specs</a>
+    <a href="#symptoms">Symptoms</a>
+    <a href="#how">How to catch it</a>
+    <a href="#strain">Strain</a>
   </nav>
   <div class="nav-right">
     <div class="nav-socials" aria-label="Social channels">
@@ -49,224 +52,228 @@
 
 <main id="top">
 
-<!-- ============================== HERO ============================== -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-type">
-      <h1 class="wordmark">
-        <span aria-hidden="true">SMALLCOX</span>
-        <span class="sr-only">Smallcox</span>
-      </h1>
-      <div class="hero-sub">
-        <p class="ticker">$COX</p>
-        <p class="lede">
-          <em>Clinical findings on the only virus that pumps.</em>
-          A self-replicating asset, indexed on Solana, transmitted
-          via group chat and timeline exposure.
-        </p>
-      </div>
-      <div class="hero-actions">
-        <a class="btn" href="#buy">Acquire $COX</a>
-        <a class="btn ghost" href="#origin">Read the dossier</a>
-      </div>
-    </div>
+  <p class="hero-eyebrow">
+    <span class="dot-mark"></span>
+    Outbreak confirmed · Solana
+  </p>
 
-    <figure class="hero-art">
-      <img src="./assets/logo-orig.webp" alt="Smallcox" loading="eager" decoding="async" />
-    </figure>
-  </div>
+  <h1 class="wordmark"><span>SMALLCOX</span></h1>
+
+  <p class="ticker">
+    <span class="cashtag">$COX</span>
+    <span class="divider"></span>
+    <span>The only virus that pumps.</span>
+  </p>
+
+  <figure class="hero-banner">
+    <img src="./assets/banner.webp" alt="Patient Zero — poxed, powerless, holding a measuring tape. SMALLCOX." width="1600" height="685" loading="eager" decoding="async" />
+  </figure>
 
   <div class="hero-foot">
-    <div class="hero-scroll">scroll<span></span></div>
+    <p class="lede">
+      Scientists confirmed the hantavirus could shrink the average man by
+      three inches. The comedian <strong>Mark Normand</strong> quoted it with one word.
+      We minted it on Solana. The chart did the rest.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#buy">
+        <span>Get $COX</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M3 10h13M11 5l5 5-5 5"/></svg>
+      </a>
+      <a class="btn ghost" href="#origin">Read the lore</a>
+    </div>
   </div>
 </section>
 
-<!-- ============================== ORIGIN ============================== -->
-<section class="section origin" id="origin">
-  <div class="rule"><span>01</span><i></i><span>Origin</span></div>
+<!-- ================= ORIGIN ================= -->
+<section class="origin" id="origin">
+  <div class="section-tag"><span>01</span><i></i><span>Patient Zero</span></div>
 
   <div class="origin-grid">
-    <div class="origin-text">
-      <h2 class="display">Patient&nbsp;Zero.</h2>
-      <p class="serif">
+    <div class="origin-copy">
+      <h2 class="display">It started with a&nbsp;tweet.</h2>
+      <p class="hand">— and one word from Mark Normand.</p>
+
+      <p>
         On a Tuesday, the timeline coughed. A wire-service post claimed the
         hantavirus could shorten the average man by three inches. The comedian
-        Mark Normand quoted it with a single word.
+        <strong>Mark Normand</strong>, contacted while walking past a Honda,
+        replied with one word.
       </p>
-      <blockquote class="pull">
-        <span class="quotemark">&ldquo;</span>
-        <p>Smallcox.</p>
-        <cite>— Mark Normand, on the record</cite>
-      </blockquote>
+
       <p>
-        That word is now a token. <strong>$COX</strong> indexes a simple thesis: that
-        anything which can be laughed at, can be priced; and anything which can be
-        priced, eventually is. We minted the joke. The market did the rest.
+        That word is now a token. <strong>$COX</strong> indexes a simple thesis:
+        anything that can be laughed at can be priced, and anything that can be
+        priced eventually is. We minted the joke. The market did the rest.
       </p>
-      <p class="byline">— Smallcox Research Division</p>
+
+      <p class="byline">— SMALLCOX RESEARCH DIV.</p>
     </div>
 
     <figure class="evidence">
       <div class="tw-frame">
-        <blockquote class="twitter-tweet" data-theme="dark" data-conversation="none" data-dnt="true" data-align="center">
+        <blockquote class="twitter-tweet" data-theme="light" data-conversation="none" data-dnt="true" data-align="center">
           <p lang="en" dir="ltr">Smallcox</p>
           &mdash; mark normand (@marknorm)
           <a href="https://twitter.com/marknorm/status/2054567829848920443?ref_src=twsrc%5Etfw">View on X</a>
         </blockquote>
-        <noscript>
-          <img src="./assets/evidence.jpg" alt="The original Mark Normand post quoting the hantavirus story." />
-        </noscript>
       </div>
-      <figcaption>
-        <span class="ex">Exhibit A</span>
-        <a href="https://x.com/marknorm/status/2054567829848920443" target="_blank" rel="noopener">View source on X →</a>
-      </figcaption>
+      <figcaption><span class="badge">Exhibit A</span><a href="https://x.com/marknorm/status/2054567829848920443" target="_blank" rel="noopener">View on X →</a></figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ============================== VIDEO (pitch black) ============================== -->
-<section class="section-black video-section" aria-labelledby="containment">
-  <p class="black-eyebrow" id="containment">CONTAINMENT FOOTAGE / 04:20</p>
-  <video
-    class="vid"
-    autoplay muted loop playsinline preload="metadata"
-    poster="./assets/vid-poster.jpg">
+<!-- ================= VIDEO (BLACK) ================= -->
+<section class="video-section" aria-labelledby="containment">
+  <p class="black-eyebrow" id="containment">Containment footage · 04:20 PM</p>
+  <video class="vid" autoplay muted loop playsinline preload="metadata"
+         poster="./assets/vid-poster.jpg">
     <source src="./assets/vid.webm" type="video/webm" />
-    <source src="./assets/vid.mp4" type="video/mp4" />
+    <source src="./assets/vid.mp4"  type="video/mp4" />
   </video>
   <p class="black-foot">No survivors. No refunds.</p>
 </section>
 
-<!-- ============================== FINDINGS ============================== -->
-<section class="section findings" id="findings">
-  <div class="rule"><span>02</span><i></i><span>Clinical Findings</span></div>
-  <h2 class="display">Side&nbsp;effects&nbsp;<em class="serif-it">may include</em></h2>
+<!-- ================= SYMPTOMS ================= -->
+<section class="symptoms" id="symptoms">
+  <div class="section-tag"><span>02</span><i></i><span>Symptoms</span></div>
+  <h2 class="display">
+    Side effects&nbsp;<em class="marker">may include</em>
+  </h2>
 
-  <ol class="findings-grid">
-    <li class="f-card">
-      <div class="f-head"><span class="num">01</span><span class="tag">Acute</span></div>
+  <ol class="sym-grid">
+    <li class="sym-card">
+      <span class="sym-num">01</span>
       <h3>Portfolio engorgement</h3>
-      <p>Acute swelling of the unrealized PnL line. Persists in onlookers as a recurring need to refresh the chart.</p>
+      <p>Sudden inflation of the unrealized PnL line. Refreshing the chart becomes involuntary.</p>
+      <span class="sym-tag">Acute</span>
     </li>
-    <li class="f-card">
-      <div class="f-head"><span class="num">02</span><span class="tag">Fever</span></div>
+    <li class="sym-card">
+      <span class="sym-num">02</span>
       <h3>FOMO fever</h3>
-      <p>Body temperature spikes correlate strongly with green candles. Cold sweats reported in those who sold the bottom.</p>
+      <p>Body temperature tracks green candles. Cold sweats reported in those who sold the bottom.</p>
+      <span class="sym-tag">Fever</span>
     </li>
-    <li class="f-card">
-      <div class="f-head"><span class="num">03</span><span class="tag">Airborne</span></div>
+    <li class="sym-card">
+      <span class="sym-num">03</span>
       <h3>Memetic shedding</h3>
-      <p>Carriers infect three contacts within twenty-four hours. Vector of transmission: a single shared link.</p>
+      <p>Carriers infect three contacts in 24 hours. Vector of transmission: a shared link.</p>
+      <span class="sym-tag">Airborne</span>
     </li>
-    <li class="f-card">
-      <div class="f-head"><span class="num">04</span><span class="tag">Chronic</span></div>
+    <li class="sym-card">
+      <span class="sym-num">04</span>
       <h3>Diamond calluses</h3>
-      <p>Hands fuse to phones within minutes of first exposure. Irreversible. Often desired.</p>
+      <p>Hands fuse to phones within minutes of first exposure. Permanent. Often desired.</p>
+      <span class="sym-tag">Chronic</span>
     </li>
-    <li class="f-card">
-      <div class="f-head"><span class="num">05</span><span class="tag">Cyclical</span></div>
+    <li class="sym-card">
+      <span class="sym-num">05</span>
       <h3>Shrinkage</h3>
-      <p>Temporary. Documented in 100% of Sundays. Studies remain inconclusive.</p>
+      <p>Documented in 100% of Sundays. Resolves by Monday. Studies remain inconclusive.</p>
+      <span class="sym-tag">Cyclical</span>
     </li>
-    <li class="f-card">
-      <div class="f-head"><span class="num">06</span><span class="tag">Terminal</span></div>
+    <li class="sym-card">
+      <span class="sym-num">06</span>
       <h3>Cult formation</h3>
-      <p>Carriers begin referring to themselves as &ldquo;the infected.&rdquo; Group chats double as treatment facilities.</p>
+      <p>Carriers refer to themselves as &ldquo;the infected.&rdquo; Group chats double as treatment centers.</p>
+      <span class="sym-tag">Terminal</span>
     </li>
   </ol>
 </section>
 
-<!-- ============================== PROTOCOL ============================== -->
-<section class="section-black protocol" id="protocol">
-  <div class="rule rule-light"><span>03</span><i></i><span>Acquisition Protocol</span></div>
-  <h2 class="display light">Four&nbsp;steps&nbsp;<em class="serif-it">to exposure.</em></h2>
+<!-- ================= HOW TO CATCH IT ================= -->
+<section class="how" id="how">
+  <div class="section-tag"><span>03</span><i></i><span>How to catch it</span></div>
+  <h2 class="display">Four steps to&nbsp;<em class="marker">exposure.</em></h2>
 
-  <ol class="steps">
-    <li>
-      <span class="step-no">01</span>
+  <ol class="how-grid">
+    <li class="how-step">
+      <span class="how-num">01</span>
       <h3>Phantom</h3>
-      <p>Install <a href="https://phantom.app" target="_blank" rel="noopener">Phantom</a>. Solana's host of choice.</p>
+      <p>Install <a href="https://phantom.app" target="_blank" rel="noopener">Phantom Wallet</a> — Solana's host of choice.</p>
     </li>
-    <li>
-      <span class="step-no">02</span>
+    <li class="how-step">
+      <span class="how-num">02</span>
       <h3>Fund</h3>
       <p>Bridge SOL from any exchange. The virus prefers a warm wallet.</p>
     </li>
-    <li>
-      <span class="step-no">03</span>
+    <li class="how-step">
+      <span class="how-num">03</span>
       <h3>Swap</h3>
-      <p>Open <a href="https://jup.ag" target="_blank" rel="noopener">Jupiter</a>. Paste the contract. Confirm.</p>
+      <p>Open <a href="https://jup.ag" target="_blank" rel="noopener">Jupiter</a>. Paste the CA. Confirm.</p>
     </li>
-    <li>
-      <span class="step-no">04</span>
+    <li class="how-step">
+      <span class="how-num">04</span>
       <h3>Spread</h3>
       <p>Post once. Forward twice. The infection is the alpha.</p>
     </li>
   </ol>
 </section>
 
-<!-- ============================== SPECS ============================== -->
-<section class="section specs" id="specs">
-  <div class="rule"><span>04</span><i></i><span>Strain Specification</span></div>
-  <h2 class="display">The&nbsp;strain.</h2>
+<!-- ================= STRAIN ================= -->
+<section class="strain" id="strain">
+  <div class="section-tag"><span>04</span><i></i><span>The Strain</span></div>
+  <h2 class="display">Lab-leaked tokenomics.</h2>
 
-  <div class="spec-grid">
-    <article class="s-card">
-      <span class="s-label">Total supply</span>
-      <strong class="s-value">1<small>,</small>000<small>,</small>000<small>,</small>000</strong>
-      <span class="s-foot">One billion units in circulation</span>
+  <div class="stat-grid">
+    <article class="stat">
+      <span class="stat-label">Total supply</span>
+      <strong class="stat-value">1B</strong>
+      <span class="stat-note">One billion units. No mint key.</span>
     </article>
-    <article class="s-card">
-      <span class="s-label">Network</span>
-      <strong class="s-value">Solana</strong>
-      <span class="s-foot">SPL · low-latency · low-fee</span>
+    <article class="stat">
+      <span class="stat-label">Network</span>
+      <strong class="stat-value">SOL</strong>
+      <span class="stat-note">SPL · low fee · fast as a sneeze</span>
     </article>
-    <article class="s-card">
-      <span class="s-label">Buy / Sell tax</span>
-      <strong class="s-value">0<small> / </small>0</strong>
-      <span class="s-foot">No tax. No friction.</span>
+    <article class="stat">
+      <span class="stat-label">Tax</span>
+      <strong class="stat-value">0<small> / </small>0</strong>
+      <span class="stat-note">No buy tax. No sell tax.</span>
     </article>
-    <article class="s-card">
-      <span class="s-label">Liquidity</span>
-      <strong class="s-value">100<small>%</small></strong>
-      <span class="s-foot">LP burned at deploy</span>
+    <article class="stat">
+      <span class="stat-label">Liquidity</span>
+      <strong class="stat-value">100<small>%</small></strong>
+      <span class="stat-note">LP burned at deploy.</span>
     </article>
-    <article class="s-card">
-      <span class="s-label">Team allocation</span>
-      <strong class="s-value">None</strong>
-      <span class="s-foot">Zero wallet, zero unlocks</span>
+    <article class="stat">
+      <span class="stat-label">Team</span>
+      <strong class="stat-value">None</strong>
+      <span class="stat-note">Zero wallet. Zero unlocks.</span>
     </article>
-    <article class="s-card s-card-accent">
-      <span class="s-label">Average pump</span>
-      <strong class="s-value">3<small>"</small></strong>
-      <span class="s-foot">Per clinical observation</span>
+    <article class="stat stat-accent">
+      <span class="stat-label">Avg. pump</span>
+      <strong class="stat-value">3<small>″</small></strong>
+      <span class="stat-note">Per clinical observation.</span>
     </article>
   </div>
 </section>
 
-<!-- ============================== BUY / SOCIALS ============================== -->
-<section class="section-black buy" id="buy">
-  <h2 class="display light">Spread&nbsp;it.</h2>
-  <p class="black-lede">
-    No mask required. No mask permitted. Three channels of transmission below.
-  </p>
+<!-- ================= BUY ================= -->
+<section class="buy" id="buy">
+  <h2 class="display">Spread it.</h2>
+  <p class="buy-lede">No mask required. No mask permitted.</p>
 
   <nav class="socials" aria-label="Social channels">
-    <a class="social" href="#" aria-label="X / Twitter" data-soon>
+    <a class="social" href="#" data-soon aria-label="X / Twitter">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2H21l-6.52 7.45L22 22h-6.844l-4.78-6.27L4.8 22H2l7-8.01L1.6 2h6.93l4.32 5.71L18.244 2Zm-1.2 18h1.9L7.04 4H5.04l12 16Z"/></svg>
+      <span>X</span>
     </a>
-    <a class="social" href="#" aria-label="Telegram" data-soon>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.96 15.36 9.8 19.6c.5 0 .72-.22 1-.48l2.4-2.32 4.98 3.64c.92.5 1.58.24 1.82-.86l3.3-15.46c.32-1.42-.52-1.98-1.4-1.66L1.6 9.18c-1.4.56-1.38 1.36-.24 1.72l5.32 1.66 12.36-7.78c.58-.36 1.12-.16.68.22"/></svg>
+    <a class="social" href="#" data-soon aria-label="Telegram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.96 15.36 9.8 19.6c.5 0 .72-.22 1-.48l2.4-2.32 4.98 3.64c.92.5 1.58.24 1.82-.86l3.3-15.46c.32-1.42-.52-1.98-1.4-1.66L1.6 9.18c-1.4.56-1.38 1.36-.24 1.72l5.32 1.66 12.36-7.78c.68.22"/></svg>
+      <span>Telegram</span>
     </a>
-    <a class="social" href="#" aria-label="Dexscreener" data-soon>
+    <a class="social" href="#" data-soon aria-label="Dexscreener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h4v16H3zM10 8h4v12h-4zM17 12h4v8h-4z"/></svg>
+      <span>Dexscreener</span>
     </a>
   </nav>
 
   <p class="disclaim">
-    $COX is a meme. Not financial advice, not medical advice, not endorsed by anyone
-    quoted on this page. The eggplant has no inherent value, only spiritual.
+    $COX is a meme. Not financial advice. Not medical advice. Not endorsed by any
+    person quoted on this page. The eggplant has no inherent value, only spiritual.
   </p>
 </section>
 
@@ -274,12 +281,12 @@
 
 <footer class="foot">
   <span>SMALLCOX · the only virus that pumps</span>
-  <span class="foot-r">© 2026 · A self-replicating asset</span>
+  <span class="foot-r">© 2026</span>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top" type="button">
   <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/>
   </svg>
   <span>Top</span>
 </button>
