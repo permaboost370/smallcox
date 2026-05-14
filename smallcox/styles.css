@@ -141,6 +141,10 @@ body{
   .poke-1{right:-12px;top:10px;font-size:22px}
   .poke-2{left:-12px;bottom:14px;font-size:22px}
 }
+@media (max-width:480px){
+  .poke-1{right:8px;top:8px;font-size:16px;padding:6px 12px;box-shadow:3px 3px 0 var(--ink)}
+  .poke-2{left:8px;bottom:8px;font-size:16px;padding:6px 12px;box-shadow:3px 3px 0 var(--ink)}
+}
 
 .hero-type{padding:8px 0}
 .row{margin-bottom:18px}
@@ -162,10 +166,11 @@ body{
 
 .wm{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(120px, 22vw, 280px);line-height:.84;
+  font-size:clamp(72px, 18vw, 280px);line-height:.84;
   letter-spacing:-.02em;
   margin:0 0 4px;
   color:var(--ink);
+  word-break:break-word;
 }
 .kicker{
   font-family:var(--hand);font-size:clamp(28px, 3.4vw, 42px);
@@ -246,9 +251,10 @@ body{
 }
 .lore-h{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(56px, 9vw, 132px);line-height:.92;
+  font-size:clamp(40px, 9vw, 132px);line-height:.92;
   letter-spacing:-.005em;margin:0 0 52px;
   text-transform:uppercase;
+  word-break:break-word;
 }
 .lore-h em{
   font-style:normal;color:var(--red);
@@ -265,10 +271,11 @@ body{
 .lore-copy p strong{color:var(--ink);font-weight:700}
 .lore-copy .pull{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(48px, 6vw, 80px);line-height:1;letter-spacing:.005em;
+  font-size:clamp(36px, 7vw, 80px);line-height:1;letter-spacing:.005em;
   color:var(--ink);text-transform:uppercase;
   margin:24px 0;
   border-left:6px solid var(--red);padding-left:20px;
+  word-break:break-word;
 }
 
 /* tweet embed frame — minimal, sticker-style */
@@ -321,9 +328,10 @@ body{
 .buy-inner{max-width:var(--maxw);margin:0 auto}
 .buy-h{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(56px, 9vw, 132px);line-height:.9;
+  font-size:clamp(40px, 9vw, 132px);line-height:.9;
   letter-spacing:-.005em;margin:0 0 56px;
   text-transform:uppercase;
+  word-break:break-word;
 }
 .buy-h em{font-style:normal;color:var(--red)}
 
@@ -337,9 +345,9 @@ body{
 }
 .steps li{
   padding:22px 0;border-top:2px solid var(--ink);
-  font-size:20px;line-height:1.45;
+  font-size:clamp(16px, 4.5vw, 20px);line-height:1.45;
   color:var(--ink-2);
-  display:flex;align-items:baseline;gap:18px;
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
 }
 .steps li:last-child{border-bottom:2px solid var(--ink)}
 .steps li b{
@@ -366,8 +374,8 @@ body{
   padding:12px;border-radius:12px;margin-bottom:18px;
 }
 .ca-row code{
-  flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size:14px;color:#fff;
+  flex:1;min-width:0;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size:13px;color:#fff;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .copy{
@@ -401,9 +409,10 @@ body{
 .join-inner{position:relative;max-width:800px;margin:0 auto}
 .join-h{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(64px,9vw,120px);line-height:.9;
+  font-size:clamp(44px,9vw,120px);line-height:.9;
   letter-spacing:-.005em;margin:0 0 6px;
   text-transform:uppercase;
+  word-break:break-word;
 }
 .join-h em{font-style:normal;color:var(--red)}
 .join-sub{
